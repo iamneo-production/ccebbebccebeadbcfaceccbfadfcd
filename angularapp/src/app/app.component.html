@@ -1,4 +1,4 @@
-<div class="form">
+<!-- <div class="form">
   <form [formGroup]="inputForm">
     <p style="text-align: center;margin-left: 32px;"> Curcency-Convertor</p>
     <div class="form-group col-md-11" style="margin-left: 15px;">
@@ -26,4 +26,21 @@
       <p id="resValue" style="text-align: center;margin-left: 0px;">{{inputForm.value.resValue }}</p>
     </div>
   </form>
-</div>
+</div> -->
+
+<form>
+  From:<select name="fCurrency" [(ngModel)]="opt1" id="fromCurrency">
+    <option value="1.126735">USD</option>
+    <option value="79.677056">INR</option>
+    <option value="0.876893">GBP</option>
+  </select><br>
+  To:<select name="tCurrency" [(ngModel)]="opt2" id="toCurrency">
+    <option value="1.126735">USD</option>
+    <option value="79.677056">INR</option>
+    <option value="0.876893">GBP</option>
+  </select>
+  <input type="number"[(ngModel)]="amt" name="amount" id="amount">
+  <input type="button" value="convert" id="submitButton" (click)="exchange(opt1,opt2,amt)">
+  <input type="text" [(ngModel)]="res" id="result">
+  <p id="resValue">{{result}}</p>
+  </form>
